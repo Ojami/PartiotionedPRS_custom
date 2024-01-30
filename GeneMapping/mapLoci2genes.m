@@ -1,28 +1,8 @@
 function mapLoci2genes
 
-% NOTE: should be run after call_regenie_gene_based
-% @05MAY2023: gene-based results should be run over novel loci identified
-% via different adiposity adjustments. These loci usually point to
-% different nearby genes w/wo supporting eQTL/CI/MAGAM gene-based evidence.
-% Therefore, this function unifies the list of genes returned from FUMA
-% gene-mapping over different adiposity adjustments. This list can be
-% further narrowed down to include only specific criteria, such as
-% eQTL/MAGMA/positionally mapped genes.
-%
-% NOTE: we keep FUMA mapped genes in an adipo-specific manner. This means
-% from each set of mapped genes by FUMA, only mapped genes for loci in each
-% adipo-specific adjustments are kept. For instance, if there are 4 SNPs in
-% the final table with strongest p-value (by final table we mean after
-% clumping and keeping the strongest variant per each loci along with its
-% adipo adjustment) that have been adjusted for BMI, then only mapped genes
-% for those 4 variants will be kept from the FUMA results (i.e. FUMA PDFF
-% or cT1 adjusted for BMI). This better reflects the adipo adjusted
-% approach of this project, and further reduces the computational time
-% (because otherwise there will be overlapping genes for the same locus
-% from all FUMA files).
-
-%@30AUG2023: for novel loci, we keep only replicated loci on external
-%cohorts and discard the rest.
+% @05MAY2023: gathers and integrates all evidence for each loci from
+% different sources to identify putative associated genes with each genetic
+% locus.
 
 % @01SEP2023: we add fine-mapped genes (nearest gene to variant with the
 % highest PIP at each locus), colocalized genes and genes with highest V2G

@@ -5,7 +5,9 @@
 
 2. Gene-mapping of identified loci
 
-3. Calculating, goodness-of-fit and association analysis of overall and partitioned PRS
+3. Calculating, goodness-of-fit and association analysis of overall and partitioned PRS (pPRS)
+
+4. bNMF soft-clustering algorithm results for generating pPRS
 
 > [!NOTE]
 > You need an existing access to UK Biobank genotypic and phenotypic data.
